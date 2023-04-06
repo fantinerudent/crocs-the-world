@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Crocs Prada",
+    "price": 650,
+    "color": "blue",
+    "description": "crocs overpriced to take a walk in a lac",
+    "imgUrl": "https://www.prada.com/content/dam/pradabkg_products/1/1X8/1X853M/3LKKF0013/1X853M_3LKK_F0013_F_055_SLR.jpg/jcr:content/renditions/cq5dam.web.hebebed.1250.1250.jpg,https://www.prada.com/content/dam/pradabkg_products/1/1X8/1X853M/3LKKF0013/1X853M_3LKK_F0013_F_055_SLR.jpg/jcr:content/renditions/cq5dam.web.hebebed.2000.2000.jpg"
+  },
+  {
+    "name": "Crocshreks",
+    "price": 45,
+    "color": "green",
+    "description": "difficult to pronounce but looks nice on your smelly feet",
+    "imgUrl": "https://images.tshirtslowprice.com/wp-content/uploads/2022/12/26131726/Shrek-Crocs-Shoes-1.jpg"
+  },
+  {
+    "name": "KFCrocs",
+    "price": 3,
+    "color": "dead chicken",
+    "description": "not sure i would like to eat it thought, but i like chicken",
+    "imgUrl": "https://grungecake.com/wp-content/uploads/2020/03/kfc-crocs-grungecake-thumbnail-03.jpg"
+  },
+  {
+    "name": "MinionsCrocs",
+    "price": 30,
+    "color": "yellow",
+    "description": "BANANAAAA !",
+    "imgUrl": "https://img01.ztat.net/article/spp-media-p1/c8880467184f44d0890077a2aa5180f7/64d90f1086ed4e969f89a61320aaadcd.jpg?imwidth=1800"
+  },
+  {
+    "name": "UniCrocs",
+    "price": 19.99,
+    "color": "white",
+    "description": "I want my feet to be unicorns, so what",
+    "imgUrl": "https://img.rnudah.com/images/26/265126104692911.jpg"
+  },
+  {
+    "name": "CrocoCrocs",
+    "price": 68,
+    "color": "green",
+    "description": "Python skin is has been",
+    "imgUrl": "https://i.pinimg.com/736x/64/19/f8/6419f84517f6fc258f8c51de5e742c08--crocs-gag.jpg"
+  },
+  {
+    "name": "CrocsTopel",
+    "price": 299,
+    "color": "red",
+    "description": "Everyday is a work in progress!",
+    "imgUrl": "https://img-9gag-fun.9cache.com/photo/aREBBgj_460s.jpg"
+  }
+]
