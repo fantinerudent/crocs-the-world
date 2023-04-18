@@ -1,6 +1,13 @@
-import './style.scss';
+import { useNavigate } from "react-router-dom";
+import "./style.scss";
 
 const CrocCard = ({ croc }) => {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate(`/croc/${croc.id}`);
+  };
+
   return (
     <div className="card">
       <h2 className="card-title"> {croc.name}</h2>
@@ -11,6 +18,7 @@ const CrocCard = ({ croc }) => {
       <div className="img-card-container">
         <img src={croc.imgUrl} alt="" className="img-card" />
       </div>
+      <button onClick={handleRedirect}> Cliclick </button>
     </div>
   );
 };
