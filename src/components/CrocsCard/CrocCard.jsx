@@ -18,7 +18,7 @@ const CrocCard = ({ croc }) => {
       <div className="img-card-container">
         <img src={croc.imgUrl} alt="" className="img-card" />
       </div>
-      <button onClick={handleRedirect}> Cliclick </button>
+      <button onClick={handleRedirect}> See more</button>
     </div>
   );
 };
