@@ -1,18 +1,15 @@
-import { useState } from "react";
 import "./App.css";
-import CrocsList from "./components/CrocsList";
-import NavBar from "./components/NavBar";
+import CrocsList from "./components/CrocsList/CrocsList";
+import NavBar from "./components/NavBar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 
 import CrocCardId from "./components/CrocCardId/CrocCardId";
 
 function App() {
-
-
   return (
     <div className="App">
-        <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/crocs-list" element={<CrocsList />} />

@@ -1,26 +1,27 @@
-import { useNavigate } from "react-router-dom";
 import "./style.scss";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import surprise from "../../assets/surprise.png";
 
-const CrocCard = ({ croc }) => {
-  const navigate = useNavigate();
-
-  const handleRedirect = () => {
-    navigate(`/croc/${croc.id}`);
-  };
-
+export default function CrocCard({ croc }) {
   return (
-    <div className="card">
-      <h2 className="card-title"> {croc.name}</h2>
-      <p className="card-price">
-        Cost : {croc.price} {croc.price > 100 ? "$$$$$$$$$$$$$$" : "$"}
-      </p>
-      <p className="card-description">Description : {croc.description}</p>
-      <div className="img-card-container">
-        <img src={croc.imgUrl} alt="" className="img-card" />
-      </div>
-      <button onClick={handleRedirect}> See more</button>
-    </div>
+    <Card className="card" sx={{ minWidth: 400 }}>
+      <CardMedia
+        sx={{ height: 240 }}
+        image={croc.img_url ? croc.img_url : surprise}
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {croc.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {croc.description}
+        </Typography>
+      </CardContent>
+    </Card>
   );
-};
-
-export default CrocCard;
+}
