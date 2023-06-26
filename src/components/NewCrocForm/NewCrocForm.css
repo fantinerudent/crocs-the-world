@@ -1,0 +1,16 @@
+
+.form-croc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+
+}
+
+input {
+    background-color: aliceblue !important;
+}
+
+button {
+    margin: 20px !important;
+}
