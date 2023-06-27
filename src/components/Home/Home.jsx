@@ -1,13 +1,18 @@
+import Login from "../Login/Login";
 import NewCrocForm from "../NewCrocForm/NewCrocForm";
+
+import Register from "../Register/Register";
 
 
 const Home = () => {
-    return (  
+    return (
         <>
-        <NewCrocForm/>
-        <div> JE SUIS TA HOME ! </div>
+            {/* <NewCrocForm/> */}
+            {/* <Register /> */}
+            <Login />
+            <div> JE SUIS TA HOME ! </div>
         </>
     );
 }
- 
+
 export default Home;

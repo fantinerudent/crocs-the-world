@@ -1,5 +1,5 @@
 import connection from "../db.cjs";
-import chalk from "chalk";
+
 
 export const createUser = (req, res) => {
     const { firstname, lastname, email, city, language, hashedPassword } = req.body;
@@ -52,11 +52,13 @@ export const getUserById = (req, res) => {
 
 export const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     const { email } = req.body;
+    
     connection.promise()
       .query("select * from users where email = ?", [email])
       .then(([users]) => {
           if (users[0] != null) {
           req.user = users[0];
+
           next();
         } else {
           res.sendStatus(401);
