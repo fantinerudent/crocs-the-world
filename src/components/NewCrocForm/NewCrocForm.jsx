@@ -3,21 +3,37 @@ import axios from "axios";
 import "./NewCrocForm.css";
 import { TextField, Button } from "@mui/material";
 
-const NewCrocForm = () => {
-  const [croc, setCroc] = useState({
-    name: "",
-    price: 0,
-    description: "",
-    imgUrl: "",
-    color: "",
-  });
+const NewCrocForm = ({ crocProps }) => {
+  const [croc, setCroc] = useState(
+    crocProps
+      ? {
+          id: crocProps.id,
+          name: crocProps.name,
+          price: crocProps.price,
+          description: crocProps.description,
+          img_url: crocProps.img_url,
+          color: crocProps.color,
+        }
+      : {
+          name: "",
+          price: 0,
+          description: "",
+          img_url: "",
+          color: "",
+        }
+  );
 
   const handleSendForm = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:3000/croc", croc)
-      .then((res) => console.log(res.message))
-      .catch((err) => console.error(err));
+    croc.id
+      ? axios
+          .post("http://localhost:3000/croc", croc)
+          .then((res) => console.log(res.message))
+          .catch((err) => console.error(err))
+      : axios
+          .put(`http://localhost:3000/croc/${crocProps.id}`, croc)
+          .then((res) => console.log(res.message))
+          .catch((err) => console.error(err));
   };
 
   const handleChange = (e) => {
@@ -60,9 +76,9 @@ const NewCrocForm = () => {
       <TextField
         required
         id="CrocImgUrl"
-        label="imgUrl"
+        label="img_url"
         variant="outlined"
-        value={croc.imgUrl}
+        value={croc.img_url}
         onChange={handleChange}
         name="imgUrl"
       />
@@ -77,7 +93,9 @@ const NewCrocForm = () => {
         onChange={handleChange}
         name="color"
       />
-      <Button type='submit' variant="contained">Send form</Button>
+      <Button type="submit" variant="contained">
+        Send form
+      </Button>
     </form>
   );
 };
