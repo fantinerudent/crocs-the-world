@@ -8,9 +8,7 @@ const jwt = require('jsonwebtoken')
 const { JWT_SECRET, JWT_EXPIRESIN, JWT_SECURE, JWT_COOKIE_MAXAGE } = process.env;
 
 const createToken = (req, res) => {
-
     const { id, role } = req.user;
-
     jwt.sign(
         { id, role },
         JWT_SECRET,
@@ -20,11 +18,9 @@ const createToken = (req, res) => {
                 console.error(err);
                 res.sendStatus(500);
             } else {
-                res
-                    .cookie("jwtToken", token, {
-                        httpOnly: true,               
-                    })
-                    .json(req.body);
+                res.cookie("jwtToken", token, {
+                    httpOnly: false,
+                }).send(req.user)
             }
         }
     );
@@ -55,7 +51,7 @@ const verifyPassword = (req, res, next) => {
         .verify(req.user.password, req.body.password)
         .then((isVerified) => {
             if (isVerified) {
-    
+
                 res.send("Credentials are valid");
                 next();
             } else {

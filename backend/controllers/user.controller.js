@@ -25,6 +25,14 @@ export const createUser = (req, res) => {
 }
 
 export const updateUser = (req, res) => {
+    const id = parseInt(req.params.id);
+    const { firstname, lastname, email, city, language, filename } = req.body;
+    console.log(filename)
+    connection.promise()
+        .query("UPDATE users set firstname = ?, lastname = ?, email = ?, city = ? , language = ?, filename = ?  where id = ?", [firstname, lastname, email, city, language, filename, id])
+        .then((res) => { if (res.affectedRows !== 0) { console.log("updated") } })
+        .catch((err) => console.error(err))
+
 
 }
 
@@ -52,22 +60,21 @@ export const getUserById = (req, res) => {
 
 export const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     const { email } = req.body;
-    
-    connection.promise()
-      .query("select * from users where email = ?", [email])
-      .then(([users]) => {
-          if (users[0] != null) {
-          req.user = users[0];
 
-          next();
-        } else {
-          res.sendStatus(401);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send("Error retrieving data from database");
-      });
-  };
- 
-  
+    connection.promise()
+        .query("select * from users where email = ?", [email])
+        .then(([users]) => {
+            if (users[0] != null) {
+                req.user = users[0];
+
+                next();
+            } else {
+                res.sendStatus(401);
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send("Error retrieving data from database");
+        });
+};
+
